@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Type Quest | Typing Challenge</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo">TYPE<span>QUEST</span></div>
+            <div class="header-tag">
+                YOUR KEYBOARD ADVENTURE STARTS HERE
+            </div>
+        </header>
+
+        <!-- HERO SECTION -->
+        <main>
+
+            <section class="hero">
+                <h1>Typing Challenge</h1>
+
+                <p>
+                    Test your speed, sharpen your accuracy,
+                    and become a keyboard champion!
+                </p>
+            </section>
+
+            <!-- GAME MODES -->
+            <section class="mode-grid">
+
+                <!-- BUBBLES MODE -->
+                <div class="mode-card">
+
+                    <div class="mode-icon">🫧</div>
+
+                    <h2>Bubble Rush</h2>
+
+                    <p>
+                        Catch the floating letters before
+                        they escape! Test your letter
+                        recognition skills.
+                    </p>
+
+                    <button class="play-btn"
+                        onclick="selectMode('bubbles')">
+                        PLAY BUBBLES
+                    </button>
+
+                </div>
+
+                <!-- KEYMAGNET MODE -->
+                <div class="mode-card">
+
+                    <div class="mode-icon">⌨️</div>
+
+                    <h2>KeyMagnet</h2>
+
+                    <p>
+                        Match the target keys with speed
+                        and precision. Improve your
+                        keyboard accuracy!
+                    </p>
+
+                    <button class="play-btn"
+                        onclick="selectMode('keymagnet')">
+                        PLAY KEYMAGNET
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>TYPE QUEST | PLAY • PRACTICE • IMPROVE</p>
+            <p>CSC336 - Web Technologies</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

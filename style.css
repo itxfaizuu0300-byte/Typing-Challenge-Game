@@ -1,0 +1,409 @@
+
+/* =================================
+   TYPE QUEST - MAIN DESIGN
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #10172f, #202b50, #34265e);
+    color: white;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+    padding: 25px 0;
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 55px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #a78bfa;
+}
+
+.logo span {
+    color: #38d9f5;
+}
+
+.header-tag {
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+/* HERO SECTION */
+
+.hero {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 7vw, 65px);
+    font-weight: 800;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #38d9f5, #a78bfa, #f472b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: #cbd5e1;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* MODE CARDS */
+
+.mode-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.mode-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 22px;
+    padding: 30px;
+    text-align: center;
+    transition: 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.mode-card:hover {
+    transform: translateY(-7px);
+    border-color: #38d9f5;
+    box-shadow: 0 12px 35px rgba(56, 217, 245, 0.15);
+}
+
+.mode-icon {
+    font-size: 55px;
+    margin-bottom: 18px;
+}
+
+.mode-card h2 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.mode-card p {
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+/* BUTTONS */
+
+button {
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 13px 25px;
+    transition: 0.3s;
+}
+
+.play-btn {
+    background: linear-gradient(90deg, #38d9f5, #8b5cf6);
+    color: white;
+}
+
+.play-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    color: #94a3b8;
+    margin-top: 55px;
+    font-size: 13px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .header {
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .mode-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mode-card {
+        padding: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+}
+
+/* =================================
+   BUBBLE RUSH GAME DESIGN
+================================= */
+
+.game-panel {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 22px;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 950px;
+}
+
+.game-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.stat-box {
+    background: rgba(255,255,255,0.09);
+    padding: 16px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.stat-box h3 {
+    color: #38d9f5;
+    font-size: 25px;
+    margin-bottom: 6px;
+}
+
+.stat-box p {
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+.bubble-arena {
+    height: 420px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #202d55, #151b39);
+    border: 2px solid rgba(56,217,245,0.4);
+    border-radius: 18px;
+}
+
+.bubble {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #38d9f5, #8b5cf6);
+    border: 2px solid rgba(255,255,255,0.7);
+    box-shadow: 0 5px 20px rgba(56,217,245,0.3);
+    user-select: none;
+}
+
+.bubble.correct {
+    background: #16a34a;
+    transform: scale(1.2);
+}
+
+.game-feedback {
+    text-align: center;
+    min-height: 30px;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #38d9f5;
+}
+
+.game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.game-controls button {
+    margin: 4px;
+}
+
+.game-message {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background: rgba(139,92,246,0.15);
+    border-radius: 15px;
+}
+
+@media (max-width: 650px) {
+
+    .game-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bubble-arena {
+        height: 380px;
+    }
+
+    .game-panel {
+        padding: 14px;
+    }
+
+    .bubble {
+        width: 45px;
+        height: 45px;
+        font-size: 19px;
+    }
+}
+/* =====================================
+   KEYMAGNET KEYBOARD DESIGN
+===================================== */
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin: 25px auto;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+}
+
+.keyboard-key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 45px;
+    border-radius: 9px;
+    background: #25264a;
+    border: 1px solid #7773bd;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 0 #11122b;
+    transition: 0.2s;
+}
+
+.keyboard-key.active-key {
+    background: #a78bfa;
+    color: #17132d;
+    border-color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px #a78bfa;
+}
+
+#keySet {
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+
+    .keyboard {
+        gap: 7px;
+    }
+
+    .keyboard-row {
+        gap: 4px;
+    }
+
+    .keyboard-key {
+        width: 29px;
+        height: 36px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+}
+/* Fix page overflow */
+html, body {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}/* GAME SCREEN RESPONSIVE IMPROVEMENT */
+
+.game-panel {
+    width: 90%;
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 25px;
+}
+
+.bubble-arena {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.game-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.stat-box {
+    min-width: 0;
+}
+
+@media (max-width: 700px) {
+    .game-panel {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .game-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bubble-arena {
+        height: 300px;
+    }
+}
